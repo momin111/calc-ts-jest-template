@@ -1,7 +1,7 @@
 import {subtraction} from "../src/calculator";
 
 test("Subtract: from bigger integers to smaller integer", ()=>{
-    expect(subtraction(9, 7)).toBe(5)
+    expect(subtraction(9, 7)).toBe(2)
     }
 )
 

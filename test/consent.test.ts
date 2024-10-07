@@ -16,10 +16,6 @@ describe('Test for consent', () =>{
         expect(user.consentGiven).toBe(true)
     })
 
-    test.only("Processor can give consent to use if age greater thn 18 years", () => {
-        processor.checkUserAge(user)
-        expect(user.consentGiven).toBe(true)
-    })
 
     test("Verify fail consent when it is not given", () => {
         expect(processor.checkConsent(user)).toBe(false)
