@@ -5,7 +5,7 @@ describe('Test for consent', () =>{
     let user:User
     let processor: Processor
     beforeEach(() => {
-        user = new User("Jack", "Donald", "+3723343535", "Tallinn")
+        user = new User("Jack", "Donald",17, "+3723343535", "Tallinn")
         processor = new Processor()
     })
     test("Initially have undefined consent", () => {
@@ -15,6 +15,8 @@ describe('Test for consent', () =>{
         processor.giveConsent(user)
         expect(user.consentGiven).toBe(true)
     })
+
+
     test("Verify fail consent when it is not given", () => {
         expect(processor.checkConsent(user)).toBe(false)
     })
