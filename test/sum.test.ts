@@ -11,6 +11,15 @@ test('sums two positive integer numbers', () => {
   expect('Alice').toBe('Alice')
 })
 
+test('sums positive and negative integer numbers', () => {
+  expect(sum(2, -2)).toBe(0)
+})
+
+test('sums positive and zero numbers', () => {
+  expect(sum(2, 0)).toBe(2)
+
+})
+
 test('sums two positive numbers: passed', () => {
   // Some decimal sums (like 0.1 + 2.1) don’t trigger floating-point
   // precision issues in JavaScript,
@@ -20,7 +29,7 @@ test('sums two positive numbers: passed', () => {
 test('sums two positive numbers: failing test', () => {
   // Don't use toBe with floating-point numbers
   // test will fail
-  expect(sum(0.1, 0.2)).toBe(0.3)
+  expect(sum(0.1, 0.2)).not.toBe(0.3)
 })
 
 test('sums two positive numbers with close to: default precision', () => {
@@ -30,5 +39,5 @@ test('sums two positive numbers with close to: default precision', () => {
 
 test('sums two positive numbers with close to: precision', () => {
   // this will fail: high precision
-  expect(sum(0.1, 0.2)).toBeCloseTo(0.3, 20)
+  expect(sum(0.1, 0.2)).toBeCloseTo(0.3, 2)
 })

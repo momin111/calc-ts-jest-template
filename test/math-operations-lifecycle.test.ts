@@ -6,10 +6,12 @@ describe('MathOperations Class testing', () => {
   // Runs before each test, creating a new instance of MathOperations
   beforeEach(() => {
     mathOps = new MathOperations()
-    // other actions
+    console.log("executed before test")
   })
-
-  test.only('should add two positive numbers correctly', () => {
+  afterEach( ()=>{
+        console.log("executed after test")
+  })
+  test('should add two positive numbers correctly', () => {
     expect(mathOps.add(2, 3)).toBe(5)
   })
 

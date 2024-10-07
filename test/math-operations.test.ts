@@ -12,5 +12,14 @@ describe('MathOperations Class testing', () => {
     mathOps = new MathOperations()
     expect(mathOps.add(-3, 3)).toBe(0)
   })
+  test("should square root a  number correctly", ()=> {
+    mathOps = new MathOperations()
+    expect(mathOps.squareRoot(9)).toBe(3)
+  })
+
+  test("should square root a negative number correctly", ()=> {
+    mathOps = new MathOperations()
+    expect(mathOps.squareRoot(-16)).toBeNaN()
+  })
 
 })
